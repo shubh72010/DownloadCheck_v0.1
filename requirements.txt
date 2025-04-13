@@ -1,3 +1,2 @@
-Flask==2.3.3
-Werkzeug==2.3.7
-gunicorn==21.2.0
+Flask==2.2.5
+yt-dlp==2023.03.12
