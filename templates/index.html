@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DownloadCheck</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <h1>DownloadCheck</h1>
+        </div>
+        <div class="app-body">
+            <div class="tile">
+                <label for="url">Enter YouTube URL:</label>
+                <input type="text" id="url" name="url" placeholder="Paste URL here">
+                <button id="download-btn">Download</button>
+            </div>
+            <div class="tile">
+                <p id="status-message"></p>
+                <a id="download-link" href="" target="_blank" style="display: none;">Download Video</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
