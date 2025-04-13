@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Download Check</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta charset="UTF-8">
+  <title>YouTube Downloader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap">
 </head>
 <body>
   <div class="container">
-    <h1>DownloadCheck</h1>
-    <div class="tiles">
-      <div class="tile">Tile 1</div>
-      <div class="tile">Tile 2</div>
-      <div class="tile">Tile 3</div>
-      <div class="tile">Tile 4</div>
+    <div class="card">
+      <h1>YouTube Downloader</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <form method="POST" action="/">
+        <input type="text" name="video_url" placeholder="Enter YouTube URL" required>
+        <button type="submit">Download Video</button>
+      </form>
     </div>
   </div>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
